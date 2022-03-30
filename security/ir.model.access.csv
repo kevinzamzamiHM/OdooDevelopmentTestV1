@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_imf_produksi,indomomfood.imf.produksi,model_imf_produksi,,1,1,1,1
+access_imf_gudang,indomomfood.imf.gudang,model_imf_gudang,,1,1,1,1
+access_imf_perubahanstok,indomomfood.imf.perubahanstok,model_imf_perubahanstok,,1,1,1,1
+access_imf_reseller,indomomfood.imf.reseller,model_imf_reseller,,1,1,1,1
+access_imf_penjualan,indomomfood.imf.penjualan,model_imf_penjualan,,1,1,1,1
+access_imf_pembelian,indomomfood.imf.pembelian,model_imf_pembelian,,1,1,1,1
+access_imf_akuntansi,indomomfood.imf.akuntansi,model_imf_akuntansi,,1,1,1,1

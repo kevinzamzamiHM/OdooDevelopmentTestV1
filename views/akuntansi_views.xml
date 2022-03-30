@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- imf.akuntansi tree view -->
+    <record id="imf_akuntansi_view_tree" model="ir.ui.view">
+        <field name="name">imf.akuntansi.view.tree</field>
+        <field name="model">imf.akuntansi</field>
+        <field name="arch" type="xml">
+            <tree edit="false" create="false">
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="date"/>
+                <field name="debet"/>
+                <field name="kredit"/>
+                <field name="saldo"/>
+            </tree>
+        </field>
+    </record>
+
+    
+    <!-- imf.akuntansi action window -->
+    <record id="imf_akuntansi_action" model="ir.actions.act_window">
+        <field name="name">Data Laporan Transaksi</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">imf.akuntansi</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="imf_akuntansi_menu_act" name="Laporan Transaksi" parent="imf_akuntansi_menu_categ" action="imf_akuntansi_action" sequence="10"/>
+</odoo>

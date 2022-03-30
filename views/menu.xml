@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="imf_menu_root" name="Indo Mom Food" sequence="1"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="imf_gudang_menu_categ" name="Gudang" parent="imf_menu_root" sequence="20"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="imf_produksi_menu_categ" name="Produksi" parent="imf_menu_root" sequence="10"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="imf_partner_menu_categ" name="Partner" parent="imf_menu_root" sequence="30"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="imf_transaksi_menu_categ" name="Transaksi" parent="imf_menu_root" sequence="40"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="imf_akuntansi_menu_categ" name="Akuntansi" parent="imf_menu_root" sequence="50"/>
+</odoo>

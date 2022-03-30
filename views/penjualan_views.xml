@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- imf.penjualan tree view -->
+    <record id="imf_penjualan_view_tree" model="ir.ui.view">
+        <field name="name">imf.penjualan.view.tree</field>
+        <field name="model">imf.penjualan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <header>
+                    <button name="toAkuntansi" string="Masukan ke Akunting" class="btn btn-success" type="object"/>
+                </header>
+                <!-- Add your fields here -->
+                <field name="tanggalTransaksi"/>
+                <field name="reseller_id" />
+                <field name="gudang_id"/>
+                <field name="harga" string="Harga Jual"/>
+                <field name="jumlahBarang"/>
+                <field name="satuan"/>
+                <field name="totalPendapatan"/>
+                <field name="terhitung" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- imf.penjualan form view -->
+    <record id="imf_penjualan_view_form" model="ir.ui.view" >
+        <field name="name">imf.penjualan.view.form</field>
+        <field name="model">imf.penjualan</field>
+        <field name="arch" type="xml">
+            <form string="Rincian Penjualan" edit="false">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="tanggalTransaksi"/>
+                        <field name="reseller_id"/>
+                        <field name="gudang_id"/>
+                        <field name="harga" string="Harga Jual"/>
+                        <field name="jumlahBarang"/>
+                        <field name="satuan"/>
+                        <field name="totalPendapatan"/>
+                        <field name="terhitung" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- imf.penjualan action window -->
+    <record id="imf_penjualan_action" model="ir.actions.act_window">
+        <field name="name">Data Penjualan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">imf.penjualan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="imf_menu_act" name="Penjualan" parent="imf_transaksi_menu_categ" 
+        action="imf_penjualan_action" 
+        sequence="20"/>
+
+</odoo>

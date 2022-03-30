@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- imf.pembelian tree view -->
+    <record id="imf_pembelian_view_tree" model="ir.ui.view">
+        <field name="name">imf.pembelian.view.tree</field>
+        <field name="model">imf.pembelian</field>
+        <field name="arch" type="xml">
+            
+            <tree>
+                <header>
+                    <button name="toAkuntansi" string="Masukan ke Akunting" class="btn btn-success" type="object"/>
+                </header>
+                <!-- Add your fields here -->
+                <field name="tanggalTransaksi"/>
+                <field name="gudang_id"/>
+                <field name="harga" string="Harga Pokok"/>
+                <field name="jumlahBarang"/>
+                <field name="satuan"/>
+                <field name="totalPengeluaran"/>
+                <field name="terhitung" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- imf.pembelian form view -->
+    <record id="imf_pembelian_view_form" model="ir.ui.view" >
+        <field name="name">imf.pembelian.view.form</field>
+        <field name="model">imf.pembelian</field>
+        <field name="arch" type="xml">
+            <form string="Rincian Pembelian Barang" edit="false">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="tanggalTransaksi"/>
+                        <field name="gudang_id"/>
+                        <field name="harga" string="Harga Pokok"/>
+                        <field name="jumlahBarang"/>
+                        <field name="satuan"/>
+                        <field name="totalPengeluaran"/>
+                        <field name="terhitung" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- imf.pembelian action window -->
+    <record id="imf_pembelian_action" model="ir.actions.act_window">
+        <field name="name">Data Pembelian</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">imf.pembelian</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="imf_pembelian_menu_act" name="Pembelian" parent="imf_transaksi_menu_categ" action="imf_pembelian_action" sequence="10"/>
+
+</odoo>

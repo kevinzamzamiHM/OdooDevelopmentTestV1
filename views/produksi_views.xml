@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- imf.produksi tree view -->
+    <record id="imf_produksi_view_tree" model="ir.ui.view">
+        <field name="name">imf.produksi.view.tree</field>
+        <field name="model">imf.produksi</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="tanggalProduksi"/>
+                <field name="gudang_id"/>
+                <field name="stok"/>
+                <field name="hargaProduksiTotal"/>
+            </tree>
+        </field>
+    </record>
+    <!-- imf.produksi form view -->
+    <record id="imf_produksi_view_form" model="ir.ui.view" >
+        <field name="name">Rincian Data Produksi</field>
+        <field name="model">imf.produksi</field>
+        <field name="arch" type="xml">
+            <form string="Rincian Produksi" edit="false">
+                <sheet>
+                    
+                    <group>
+                        <field name="name"/>
+                        <field name="tanggalProduksi"/>
+                        <field name="gudang_id"/>
+                    </group>
+
+                    <group>
+                        <field name="hargaProduksi"/>
+                        <field name="stok"/>
+                        <field name="hargaProduksiTotal"/>
+                    </group>
+                        
+                    <group>
+                        <notebook>
+                            <page name="deskripsiProduksi" string="Deskripsi Produksi">
+                                <field name="deskripsi"/>
+                            </page>
+                        </notebook>
+                    </group>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- imf.produksi action window -->
+    <record id="imf_produksi_action" model="ir.actions.act_window">
+        <field name="name">Data Produksi</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">imf.produksi</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="imf_produkkue_menu_act" name="Produksi Kue" parent="imf_produksi_menu_categ" action="imf_produksi_action" sequence="10"/>
+
+</odoo>

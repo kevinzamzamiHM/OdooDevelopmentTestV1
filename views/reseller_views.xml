@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+
+    <!-- imf.reseller tree view -->
+    <record id="imf_reseller_view_tree" model="ir.ui.view">
+        <field name="name">imf.reseller.view.tree</field>
+        <field name="model">imf.reseller</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="pic"/>
+                <field name="alamat"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- imf.reseller form view -->
+    <record id="imf_reseller_view_form" model="ir.ui.view">
+        <field name="name">imf.reseller.view.form</field>
+        <field name="model">imf.reseller</field>
+        <field name="arch" type="xml">
+            <form string="Rincian Reseller">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="pic"/>
+                        <field name="status"/>
+                    </group>
+                    <group>
+                        <field name="alamat"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- imf.reseller action window -->
+    <record id="imf_reseller_action" model="ir.actions.act_window">
+        <field name="name">Data Reseller</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">imf.reseller</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="imf_reseller_menu_act" name="Reseller" parent="imf_partner_menu_categ" 
+        action="imf_reseller_action" 
+        sequence="10"/>
+</odoo>
